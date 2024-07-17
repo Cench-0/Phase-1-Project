@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baby Items Rental</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <header>
+    <div id="header-content">
+      <h1>Baby Items Rental</h1>
+      <p>Welcome to our Baby Items Rental Service. Rent baby items at affordable prices with just a few clicks!</p>
+    </div>
+  </header>
+  <main>
+    <div id="items-container" class="items-container"></div>
+  </main>
+
+  <!-- Hidden Forms for example purposes, can be styled to be visible -->
+  <form id="rental-form" style="display:none;">
+    <input type="text" name="name" placeholder="Item Name" required>
+    <input type="text" name="description" placeholder="Description" required>
+    <input type="text" name="image" placeholder="Image URL" required>
+    <input type="number" name="rentalPrice" placeholder="Rental Price" required>
+    <input type="number" name="availabilityCount" placeholder="Available Count" required>
+    <select name="availabilityStatus" required>
+      <option value="available">Available</option>
+      <option value="rented">Rented</option>
+    </select>
+    <button type="submit">Submit Rental Request</button>
+  </form>
+
+  <script src="index.js"></script>
+</body>
+</html>
