@@ -5,31 +5,79 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Baby Items Rental</title>
   <link rel="stylesheet" href="index.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"> <!-- Add this line to include Google Fonts -->
 </head>
 <body>
   <header>
     <div id="header-content">
-      <h1>Baby Items Rental</h1>
-      <p>Welcome to our Baby Items Rental Service. Rent baby items at affordable prices with just a few clicks!</p>
+      <h1>💛💛Baby Gear Hub💛💛</h1>
+      <p>Welcome to our Baby Items Rental Service. Rent or post baby items at affordable prices with just a few clicks!</p>
     </div>
   </header>
   <main>
+    <div id="left-container">
+      <p>Turn your unused baby items into a source of extra income💲💲💲:</p>
+      <button id="post-item-button">Post an Item</button>
+    </div>
+
     <div id="items-container" class="items-container"></div>
+
+    <div id="right-container">
+      <a href="#" id="user-rentals-link" class="button-link">Click here to see your rentals</a>
+      <div id="user-rentals"></div>
+    </div>
   </main>
 
-  <!-- Hidden Forms for example purposes, can be styled to be visible -->
-  <form id="rental-form" style="display:none;">
-    <input type="text" name="name" placeholder="Item Name" required>
-    <input type="text" name="description" placeholder="Description" required>
-    <input type="text" name="image" placeholder="Image URL" required>
-    <input type="number" name="rentalPrice" placeholder="Rental Price" required>
-    <input type="number" name="availabilityCount" placeholder="Available Count" required>
-    <select name="availabilityStatus" required>
-      <option value="available">Available</option>
-      <option value="rented">Rented</option>
-    </select>
-    <button type="submit">Submit Rental Request</button>
-  </form>
+  <div id="decorative-text">Rent Everything but the Baby</div> <!-- Add this line for the decorative text -->
+
+  <!-- Modals -->
+  <div id="postModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Post an Item</h2>
+      <form id="post-form">
+        <label for="item-name">Item Name</label>
+        <input type="text" id="item-name" name="name" required>
+        <label for="description">Description</label>
+        <textarea id="description" name="description" required></textarea>
+        <label for="image">Choose Image:</label>
+        <input type="file" id="image" name="image" accept="image/*" required>
+        <label for="rentalPrice">Rental Price</label>
+        <input type="number" id="rentalPrice" name="rentalPrice" required>
+        <label for="availabilityCount">Available Count</label>
+        <input type="number" id="availabilityCount" name="availabilityCount" required>
+        <button type="submit" class="submit">Submit Item</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="rentModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Rent Item</h2>
+      <p id="rent-item-name"></p>
+      <form id="rent-form">
+        <input type="hidden" id="rent-item-id">
+        <label for="user-name">Your Name</label>
+        <input type="text" id="user-name" name="user-name" required>
+        <label for="rent-quantity">Quantity</label>
+        <input type="number" id="rent-quantity" name="rent-quantity" required>
+        <label for="user-phone">Phone Number</label>
+        <input type="tel" id="user-phone" name="user-phone" required>
+        <label for="user-address">Address</label>
+        <textarea id="user-address" name="user-address" required></textarea>
+        <button type="submit" class="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <div id="contact-container">
+      <h2>Contact Us</h2>
+      <p>Email: contact@babyitemsrental.com</p>
+      <p>Phone: +123456789</p>
+    </div>
+  </footer>
 
   <script src="index.js"></script>
 </body>

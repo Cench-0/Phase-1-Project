@@ -1,43 +1,43 @@
 {
   "babyItems": [
     {
+      "id": "1",
+      "name": "Stroller",
+      "description": "A lightweight and foldable stroller suitable for newborns to toddlers.",
+      "image": "./ProjectImages/Stroller.jpg",
+      "rentalPrice": 15,
+      "availabilityStatus": "available",
+      "availabilityCount": 10
+    },
+    {
       "id": "2",
       "name": "Crib",
       "description": "A sturdy wooden crib with an adjustable mattress height.",
       "image": "./ProjectImages/crib.jpg",
       "rentalPrice": 20,
       "availabilityStatus": "rented",
-      "availabilityCount": 0
+      "availabilityCount": 10
     },
     {
       "id": "3",
-      "name": "High Chair",
-      "description": "A comfortable high chair with a safety harness for infants.",
-      "image": "./ProjectImages/high chair.jpg",
-      "rentalPrice": 10,
-      "availabilityStatus": "available",
-      "availabilityCount": 5
-    },
-    {
-      "id": "4",
       "name": "Baby Swing",
       "description": "A battery-operated swing with multiple speed settings.",
       "image": "./ProjectImages/baby swing.jpg",
       "rentalPrice": 12,
       "availabilityStatus": "available",
-      "availabilityCount": 5
+      "availabilityCount": 8
     },
     {
-      "id": "5",
+      "id": "4",
       "name": "Car Seat",
       "description": "A rear-facing car seat suitable for infants up to 12 months.",
       "image": "./ProjectImages/car seat.jpg",
       "rentalPrice": 18,
       "availabilityStatus": "available",
-      "availabilityCount": 4
+      "availabilityCount": 10
     },
     {
-      "id": "6",
+      "id": "5",
       "name": "Baby Monitor",
       "description": "A digital baby monitor with video and audio capabilities.",
       "image": "./ProjectImages/baby monitor.jpg",
@@ -46,85 +46,40 @@
       "availabilityCount": 0
     },
     {
-      "id": "7",
+      "id": "6",
       "name": "Playpen",
       "description": "A spacious playpen with soft sides and easy setup.",
       "image": "./ProjectImages/playpen.jpg",
       "rentalPrice": 15,
       "availabilityStatus": "available",
-      "availabilityCount": 5
+      "availabilityCount": 10
     },
     {
-      "id": "8",
+      "id": "7",
       "name": "Bottle Sterilizer",
       "description": "An electric bottle sterilizer that can hold up to 6 bottles.",
       "image": "./ProjectImages/bottle sterilizer.jpg",
       "rentalPrice": 5,
       "availabilityStatus": "available",
-      "availabilityCount": 5
+      "availabilityCount": 10
     },
     {
-      "id": "9",
+      "id": "8",
       "name": "Changing Table",
       "description": "A changing table with ample storage for diapers and wipes.",
       "image": "./ProjectImages/changing table.jpg",
       "rentalPrice": 10,
       "availabilityStatus": "rented",
-      "availabilityCount": 0
+      "availabilityCount": 10
     },
     {
-      "id": "10",
+      "id": "9",
       "name": "Diaper Bag",
       "description": "A spacious diaper bag with multiple compartments.",
       "image": "./ProjectImages/diaper bag.jpg",
       "rentalPrice": 6,
       "availabilityStatus": "available",
-      "availabilityCount": 5
-    },
-    {
-      "id": "11",
-      "name": "Infant Bathtub",
-      "description": "A comfortable and secure bathtub for infants.",
-      "image": "./ProjectImages/Infant Bathtub.jpg",
-      "rentalPrice": 4,
-      "availabilityStatus": "available",
-      "availabilityCount": 5
-    },
-    {
-      "id": "12",
-      "name": "Baby Bouncer",
-      "description": "A soft and cozy bouncer with calming vibrations.",
-      "image": "./ProjectImages/Baby Bouncer.jpg",
-      "rentalPrice": 7,
-      "availabilityStatus": "available",
-      "availabilityCount": 5
-    },
-    {
-      "id": "13",
-      "name": "Nursing Pillow",
-      "description": "A supportive nursing pillow for breastfeeding mothers.",
-      "image": "./ProjectImages/Nursing Pillow.jpg",
-      "rentalPrice": 5,
-      "availabilityStatus": "available",
-      "availabilityCount": 5
-    },
-    {
-      "id": "14",
-      "name": "Baby Carrier",
-      "description": "A versatile baby carrier with multiple carrying positions.",
-      "image": "./ProjectImages/Baby Carrier.jpg",
-      "rentalPrice": 10,
-      "availabilityStatus": "rented",
-      "availabilityCount": 0
-    },
-    {
-      "id": "15",
-      "name": "Baby Gym",
-      "description": "A colorful baby gym with hanging toys for playtime.",
-      "image": "./ProjectImages/Baby Gym.jpg",
-      "rentalPrice": 8,
-      "availabilityStatus": "available",
-      "availabilityCount": 5
+      "availabilityCount": 10
     }
   ]
 }
