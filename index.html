@@ -14,9 +14,27 @@
       <p>Welcome to our Baby Items Rental Service. Rent or post baby items at affordable prices with just a few clicks!</p>
     </div>
   </header>
+
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-content">
+        <h2>Post Your Baby Gear</h2>
+        <p>Turn your unused baby items into a source of extra income.</p>
+        <button id="post-item-button-hero" class="hero-button">Get Started</button>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-content">
+        <h2>Rent Baby Gear</h2>
+        <p>Find quality baby items for rent at affordable prices.</p>
+        <button id="rent-item-button-hero" class="hero-button">Get Started</button>
+      </div>
+    </div>
+  </section>
+
   <main>
     <div id="left-container">
-      <p>Turn your unused baby items into a source of extra income💲💲💲:</p>
+      <p>Earn extra income by renting your baby items💲💲💲:</p>
       <button id="post-item-button">Post an Item</button>
     </div>
 
@@ -24,7 +42,7 @@
 
     <div id="right-container">
       <a href="#" id="user-rentals-link" class="button-link">Click here to see your rentals</a>
-      <div id="user-rentals"></div>
+      <div id="user-rentals" style="display: none;"></div>
     </div>
   </main>
 
@@ -40,8 +58,8 @@
         <input type="text" id="item-name" name="name" required>
         <label for="description">Description</label>
         <textarea id="description" name="description" required></textarea>
-        <label for="image">Choose Image:</label>
-        <input type="file" id="image" name="image" accept="image/*" required>
+        <label for="image-url">Image URL</label>
+        <input type="url" id="image-url" name="image-url" required>
         <label for="rentalPrice">Rental Price</label>
         <input type="number" id="rentalPrice" name="rentalPrice" required>
         <label for="availabilityCount">Available Count</label>

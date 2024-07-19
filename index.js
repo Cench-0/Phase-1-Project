@@ -1,30 +1,57 @@
-let isEditingPost = false;
-let currentEditingPostId = null;
-
 document.addEventListener('DOMContentLoaded', () => {
     fetchBabyItems();
 
-    document.getElementById('post-item-button').addEventListener('click', openPostModal);
-    document.querySelector('#postModal .close').addEventListener('click', closePostModal);
-    document.getElementById('post-form').addEventListener('submit', submitPostForm);
+    const postItemButton = document.getElementById('post-item-button');
+    const postItemButtonHero = document.getElementById('post-item-button-hero');
+    const rentItemButtonHero = document.getElementById('rent-item-button-hero');
+    const postModalCloseButton = document.querySelector('#postModal .close');
+    const postForm = document.getElementById('post-form');
+    const rentModalCloseButton = document.querySelector('#rentModal .close');
+    const rentForm = document.getElementById('rent-form');
+    const userRentalsLink = document.getElementById('user-rentals-link');
 
-    document.querySelector('#rentModal .close').addEventListener('click', closeRentModal);
-    document.getElementById('rent-form').addEventListener('submit', submitRentForm);
+    if (postItemButton) {
+        postItemButton.addEventListener('click', () => {
+            openPostModal();
+            resetPostForm();
+        });
+    }
 
-    document.getElementById('user-rentals-link').addEventListener('click', (e) => {
-        e.preventDefault();
-        renderUserRentals();
-    });
+    if (postItemButtonHero) {
+        postItemButtonHero.addEventListener('click', () => {
+            openPostModal();
+            resetPostForm();
+        });
+    }
 
-    // Clear form fields when opening the post modal
-    document.getElementById('post-item-button').addEventListener('click', () => {
-        document.getElementById('item-name').value = '';
-        document.getElementById('description').value = '';
-        document.getElementById('image').value = '';
-        document.getElementById('rentalPrice').value = '';
-        document.getElementById('availabilityCount').value = '';
-        isEditingPost = false; // Reset editing state
-    });
+    if (rentItemButtonHero) {
+        rentItemButtonHero.addEventListener('click', () => {
+            document.getElementById('items-container').scrollIntoView({ behavior: 'smooth' });
+        });
+    }
+
+    if (postModalCloseButton) {
+        postModalCloseButton.addEventListener('click', closePostModal);
+    }
+
+    if (postForm) {
+        postForm.addEventListener('submit', submitPostForm);
+    }
+
+    if (rentModalCloseButton) {
+        rentModalCloseButton.addEventListener('click', closeRentModal);
+    }
+
+    if (rentForm) {
+        rentForm.addEventListener('submit', submitRentForm);
+    }
+
+    if (userRentalsLink) {
+        userRentalsLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            toggleUserRentals();
+        });
+    }
 });
 
 let userRentals = [];
@@ -64,6 +91,7 @@ function fetchBabyItems() {
                 rentButton.addEventListener('click', () => {
                     if (item.availabilityCount > 0) {
                         openRentModal(item);
+                        resetRentForm();
                     } else {
                         alert('No items available for rent.');
                     }
@@ -269,6 +297,7 @@ function openPostModal(item) {
     if (item) {
         document.getElementById('item-name').value = item.name;
         document.getElementById('description').value = item.description;
+        document.getElementById('image-url').value = item.image;
         document.getElementById('rentalPrice').value = item.rentalPrice;
         document.getElementById('availabilityCount').value = item.availabilityCount;
     } else {
@@ -289,7 +318,7 @@ function submitPostForm(event) {
         id: isEditingPost ? currentEditingPostId : Date.now().toString(),
         name: formData.get('name'),
         description: formData.get('description'),
-        image: URL.createObjectURL(formData.get('image')),
+        image: formData.get('image-url'),
         rentalPrice: parseFloat(formData.get('rentalPrice')),
         availabilityCount: parseInt(formData.get('availabilityCount'), 10)
     };
@@ -330,6 +359,23 @@ function deletePostedItem(itemId) {
         });
 }
 
+function resetPostForm() {
+    document.getElementById('item-name').value = '';
+    document.getElementById('description').value = '';
+    document.getElementById('image-url').value = '';
+    document.getElementById('rentalPrice').value = '';
+    document.getElementById('availabilityCount').value = '';
+    isEditingPost = false; // Reset editing state
+}
+
+function resetRentForm() {
+    document.getElementById('user-name').value = '';
+    document.getElementById('rent-quantity').value = '';
+    document.getElementById('user-phone').value = '';
+    document.getElementById('user-address').value = '';
+    isEditingRental = false; // Reset editing state
+}
+
 // Initial load from local storage
 document.addEventListener('DOMContentLoaded', () => {
     const savedRentals = localStorage.getItem('userRentals');
@@ -339,17 +385,12 @@ document.addEventListener('DOMContentLoaded', () => {
     renderUserRentals();
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    fetchBabyItems();
-
-    document.getElementById('rental-form').addEventListener('submit', submitRentalRequest);
-
-    // Clear form fields when opening the post modal
-    document.getElementById('post-item-button').addEventListener('click', () => {
-        document.getElementById('item-name').value = '';
-        document.getElementById('description').value = '';
-        document.getElementById('image').value = '';
-        document.getElementById('rentalPrice').value = '';
-        document.getElementById('availabilityCount').value = '';
-    });
-});
+function toggleUserRentals() {
+    const rentalsContainer = document.getElementById('user-rentals');
+    if (rentalsContainer.style.display === 'block') {
+        rentalsContainer.style.display = 'none';
+    } else {
+        rentalsContainer.style.display = 'block';
+        renderUserRentals();
+    }
+}
